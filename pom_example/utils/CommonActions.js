@@ -3,8 +3,8 @@ export default class CommonActions {
         this.page = page;
     }
 
-    async navigateto(url) {
-        // await this.page.pause();
+    async navigate(url) {
+        await this.page.pause();
         await this.page.goto(url);
     }
 
@@ -17,7 +17,7 @@ export default class CommonActions {
     }
 
     async getText(selector) {
-        return await this.page.textContext(selector);
+        return await this.page.textContent(selector);
     }
 
     async isChecked(selector) {
